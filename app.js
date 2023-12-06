@@ -10,7 +10,7 @@ import CourseRoutes
  import "dotenv/config";
  import UserRoutes from './users/routes.js';
  import mongoose from 'mongoose';
- const CONNECTION_STRING =process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas-cs5610-fa23' ;
+ const CONNECTION_STRING =process.env.DB_CONNECTION_STRING;
  //"mongodb+srv://chengwenhu5:7hUlfizpEYIbG7hF@cluster0.kzblzet.mongodb.net/kanbas?retryWrites=true&w=majority";
  mongoose.connect(CONNECTION_STRING);
 
@@ -19,7 +19,7 @@ const app = express();
 app.use(
     cors({
       credentials: true,
-      origin: process.env.FRONTEND_URL
+      origin:  process.env.FRONTEND_URL,
     })
   );
 
